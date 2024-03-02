@@ -15,7 +15,7 @@ import { benefits } from "./data";
 
 const BenefitSection = () => {
   return (
-    <Stack>
+    <Stack position="relative">
       {/* image */}
       <Stack position="absolute" width="100px" left={5}>
         <Image src={Cat} alt="cat" />

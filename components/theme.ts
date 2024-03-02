@@ -6,6 +6,8 @@ const theme = extendTheme({
       yellow: "#FFB733",
       dark: "#1E1E1E",
       light: "#FFEDCD",
+      gray: "#696969",
+      grayDark: "#5B5B5B",
     },
   },
 });

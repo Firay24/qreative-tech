@@ -25,3 +25,45 @@ export const benefits = [
     desc: "Kepuasan anda adalah prioritas dan komitmen kami",
   },
 ];
+
+export const services = [
+  {
+    paket: "Premium Middle",
+    price: "2.500.000",
+    desc: "Praktis dan ekonomis untuk merintis bisnis",
+    isMain: false,
+    items: [
+      "Custome design",
+      "3x revisi gratis",
+      "3x update konten gratis",
+      "Garansi 1 tahun",
+      "Fitur menyesuaikan kebutuhan",
+    ],
+  },
+  {
+    paket: "Basic Web",
+    price: "700.000",
+    desc: "Praktis dan ekonomis untuk merintis bisnis",
+    isMain: true,
+    items: [
+      "Custome design",
+      "2x revisi gratis",
+      "2x update konten gratis",
+      "Garansi 1 tahun",
+    ],
+  },
+  {
+    paket: "Platinum Advance",
+    price: "6.000.000",
+    desc: "Praktis dan ekonomis untuk merintis bisnis",
+    isMain: false,
+    items: [
+      "Custome design",
+      "3x revisi gratis",
+      "3x update konten gratis",
+      "Garansi 1 tahun",
+      "Fitur menyesuaikan kebutuhan",
+      "Dokumentasi alur sistem",
+    ],
+  },
+];
