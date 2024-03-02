@@ -5,6 +5,7 @@ const theme = extendTheme({
     primary: {
       yellow: "#FFB733",
       dark: "#1E1E1E",
+      light: "#FFEDCD",
     },
   },
 });

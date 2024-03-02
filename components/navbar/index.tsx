@@ -1,8 +1,8 @@
 "use client";
+
+// library
 import React, { useState } from "react";
 import Image from "next/image";
-import LogoImg from "@/assets/logo.png";
-import { IoIosMenu } from "react-icons/io";
 import {
   Accordion,
   AccordionButton,
@@ -14,8 +14,13 @@ import {
   IconButton,
   Stack,
   Text,
-  useDisclosure,
 } from "@chakra-ui/react";
+
+// assets
+import LogoImg from "@/assets/logo.png";
+
+// icons
+import { IoIosMenu, IoMdClose } from "react-icons/io";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -75,10 +80,13 @@ const Navbar = () => {
           aria-label="menu"
           onClick={() => setIsOpen(!isOpen)}
           color="primary.dark"
+          fontSize="32px"
         >
-          <IoIosMenu fontSize="32px" />
+          {isOpen ? <IoMdClose /> : <IoIosMenu />}
         </IconButton>
       </HStack>
+
+      {/* menu section */}
       <Fade in={isOpen}>
         <Stack
           left={0}
