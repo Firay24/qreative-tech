@@ -1,13 +1,17 @@
-import { Button, HStack, Heading, Stack, Text } from "@chakra-ui/react";
+import { Heading, Stack, Text } from "@chakra-ui/react";
 import React from "react";
-import { FaCircleCheck } from "react-icons/fa6";
 import CardChart from "./cardChart";
 import { services } from "../data";
 import ChartProps from "@/types/chart";
+import TitleImg from "@/assets/Coin.png";
+import Image from "next/image";
 
 const ServicesSection = () => {
   return (
-    <Stack>
+    <Stack position="relative">
+      <Stack position="absolute">
+        <Image src={TitleImg} alt="coint img" />
+      </Stack>
       <Stack padding={5} textAlign="center">
         {/* heading */}
         <Stack>
