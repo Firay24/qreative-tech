@@ -1,5 +1,11 @@
-import { Stack } from "@mui/material";
+import { Stack } from "@chakra-ui/react";
+import HeroSections from "./sections/hero";
+import Navbar from "@/components/navbar";
 
 export default function Home() {
-  return <Stack>tes tas</Stack>;
+  return (
+    <Stack zIndex={20}>
+      <HeroSections />
+    </Stack>
+  );
 }
