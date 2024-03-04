@@ -55,7 +55,7 @@ const Navbar = () => {
       zIndex={100}
       position={"fixed"}
       top={0}
-      minHeight="100vh"
+      minHeight={isOpen ? "100vh" : 0}
       bgColor={isOpen ? "rgba(0, 0, 0, 0.62)" : ""}
       gap={0}
     >
@@ -88,64 +88,66 @@ const Navbar = () => {
 
       {/* menu section */}
       <Fade in={isOpen}>
-        <Stack
-          left={0}
-          width="full"
-          position="fixed"
-          bgColor="white"
-          overflow="hidden"
-          padding={6}
-          gap={4}
-        >
-          {menus.map(
-            (
-              item: {
-                label: string;
-                path: string;
-                isAccordion?: boolean;
-                childs?: string[];
-              },
-              index: number
-            ) =>
-              !item.isAccordion ? (
-                <Text
-                  key={index}
-                  fontWeight="medium"
-                  color="primary.dark"
-                  width="full"
-                  textAlign="center"
-                >
-                  {item.label}
-                </Text>
-              ) : (
-                <Accordion allowToggle>
-                  <AccordionItem border="none">
-                    <AccordionButton justifyContent="center" paddingY={0}>
-                      <Text fontWeight="medium" color="primary.dark">
-                        {item.label}
-                      </Text>
-                      <AccordionIcon />
-                    </AccordionButton>
-                    <AccordionPanel paddingBottom={0}>
-                      <Stack gap={4}>
-                        {item.childs?.map((menu: string, index: number) => (
-                          <Text
-                            key={index}
-                            fontWeight="medium"
-                            color="primary.dark"
-                            width="full"
-                            textAlign="center"
-                          >
-                            {menu}
-                          </Text>
-                        ))}
-                      </Stack>
-                    </AccordionPanel>
-                  </AccordionItem>
-                </Accordion>
-              )
-          )}
-        </Stack>
+        {isOpen ? (
+          <Stack
+            left={0}
+            width="full"
+            position="fixed"
+            bgColor="white"
+            overflow="hidden"
+            padding={6}
+            gap={4}
+          >
+            {menus.map(
+              (
+                item: {
+                  label: string;
+                  path: string;
+                  isAccordion?: boolean;
+                  childs?: string[];
+                },
+                index: number
+              ) =>
+                !item.isAccordion ? (
+                  <Text
+                    key={index}
+                    fontWeight="medium"
+                    color="primary.dark"
+                    width="full"
+                    textAlign="center"
+                  >
+                    {item.label}
+                  </Text>
+                ) : (
+                  <Accordion allowToggle key={index}>
+                    <AccordionItem border="none">
+                      <AccordionButton justifyContent="center" paddingY={0}>
+                        <Text fontWeight="medium" color="primary.dark">
+                          {item.label}
+                        </Text>
+                        <AccordionIcon />
+                      </AccordionButton>
+                      <AccordionPanel paddingBottom={0}>
+                        <Stack gap={4}>
+                          {item.childs?.map((menu: string, index: number) => (
+                            <Text
+                              key={index}
+                              fontWeight="medium"
+                              color="primary.dark"
+                              width="full"
+                              textAlign="center"
+                            >
+                              {menu}
+                            </Text>
+                          ))}
+                        </Stack>
+                      </AccordionPanel>
+                    </AccordionItem>
+                  </Accordion>
+                )
+            )}
+          </Stack>
+        ) : null}
       </Fade>
     </Stack>
   );

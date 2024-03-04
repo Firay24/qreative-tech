@@ -2,6 +2,7 @@ import { RiPaintFill } from "react-icons/ri";
 import { MdOutlineMarkUnreadChatAlt } from "react-icons/md";
 import { RiMoneyDollarCircleLine } from "react-icons/ri";
 import { FaRegFaceLaughBeam } from "react-icons/fa6";
+import PortofolioImg from "@/assets/porto.png";
 
 export const benefits = [
   {
@@ -65,5 +66,33 @@ export const services = [
       "Fitur menyesuaikan kebutuhan",
       "Dokumentasi alur sistem",
     ],
+  },
+];
+
+export const portofolios = [
+  {
+    title: "Idekeen: Landing Page",
+    desc: "Intip sebagian dari proyek-proyek website terbaik kami",
+    img: PortofolioImg,
+  },
+  {
+    title: "Dashboard Event Manajemen",
+    desc: "Intip sebagian dari proyek-proyek website terbaik kami",
+    img: PortofolioImg,
+  },
+  {
+    title: "Quizz App",
+    desc: "Intip sebagian dari proyek-proyek website terbaik kami",
+    img: PortofolioImg,
+  },
+  {
+    title: "Books App",
+    desc: "Intip sebagian dari proyek-proyek website terbaik kami",
+    img: PortofolioImg,
+  },
+  {
+    title: "Idekeen: Laboratorium Riset",
+    desc: "Intip sebagian dari proyek-proyek website terbaik kami",
+    img: PortofolioImg,
   },
 ];
