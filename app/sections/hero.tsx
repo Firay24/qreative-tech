@@ -10,9 +10,9 @@ import { IoArrowForwardCircleOutline } from "react-icons/io5";
 
 const HeroSections = () => {
   return (
-    <Stack position="relative">
+    <Stack position="relative" id="home">
       <Stack
-        zIndex={5}
+        zIndex={50}
         paddingX={5}
         gap={2}
         alignItems="center"
@@ -62,7 +62,7 @@ const HeroSections = () => {
           />
         </Stack>
       </Stack>
-      <Stack overflow="hidden" zIndex={1}>
+      <Stack overflow="hidden" zIndex={10}>
         <Image
           src={bgImg}
           alt="background"

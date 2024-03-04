@@ -4,6 +4,7 @@ import "./globals.css";
 import { Providers } from "./provider";
 import { Stack, Text } from "@chakra-ui/react";
 import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,6 +26,7 @@ export default function RootLayout({
           <Stack>
             <Navbar />
             <Stack marginTop={16}>{children}</Stack>
+            <Footer />
           </Stack>
         </Providers>
       </body>
