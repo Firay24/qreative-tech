@@ -3,6 +3,7 @@ import { MdOutlineMarkUnreadChatAlt } from "react-icons/md";
 import { RiMoneyDollarCircleLine } from "react-icons/ri";
 import { FaRegFaceLaughBeam } from "react-icons/fa6";
 import PortofolioImg from "@/assets/porto.png";
+import AvatarImg from "@/assets/avatar.png";
 
 export const benefits = [
   {
@@ -94,5 +95,29 @@ export const portofolios = [
     title: "Idekeen: Laboratorium Riset",
     desc: "Intip sebagian dari proyek-proyek website terbaik kami",
     img: PortofolioImg,
+  },
+];
+
+export const testimonies = [
+  {
+    testimoni:
+      "Lorem ipsum dolor sit amet conse ctetur adipiscing lectus a nunc mauris scelerisque sed egestas pharetraol quis pharetra arcu pharetra blandit.",
+    name: "Matt Cannon",
+    role: "Head of Marketing",
+    img: AvatarImg,
+  },
+  {
+    testimoni:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum",
+    name: "John Doe",
+    role: "Owner Figma",
+    img: AvatarImg,
+  },
+  {
+    testimoni:
+      "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old",
+    name: "Samuel Safer",
+    role: "Staff of Engineering",
+    img: AvatarImg,
   },
 ];
