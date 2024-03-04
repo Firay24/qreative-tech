@@ -6,6 +6,7 @@ import CallActionSections from "./sections/callAction";
 import ProductSections from "./sections/products";
 import AboutSections from "./sections/about";
 import TestimoniSections from "./sections/testimoni";
+import ContactSections from "./sections/contact";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <ProductSections />
       <AboutSections />
       <TestimoniSections />
+      <ContactSections />
     </Stack>
   );
 }
