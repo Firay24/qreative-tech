@@ -14,35 +14,22 @@ const HeroSections = () => {
       <Stack
         zIndex={50}
         paddingX={5}
-        gap={2}
+        gap={5}
         alignItems="center"
         justifyContent="center"
-        minHeight="80vh"
+        paddingY={10}
       >
-        <Stack minHeight="60vh" justifyContent="center">
-          <Heading as="h1" size="2xl" fontWeight="bold" color="#1E1E1E">
-            <span
-              style={{
-                backgroundColor: "white",
-                padding: 2,
-                paddingLeft: 0,
-                paddingRight: 10,
-                borderRadius: 10,
-              }}
-            >
-              Buat website
-            </span>{" "}
-            Murah dan Berkualitas Disini
+        <Stack justifyContent="center">
+          <Text>Selamat datang di Qreative Tech</Text>
+          <Heading
+            as="h1"
+            size="2xl"
+            fontWeight="bold"
+            color="#1E1E1E"
+            marginTop={2}
+          >
+            Jasa pembuatan website murah dan terpercaya
           </Heading>
-          <Text>
-            Permudah aktivitas bisnis dan organisasi Anda dengan solusi digital
-            kami. Dapatkan{" "}
-            <span style={{ fontWeight: "bold" }}>
-              kemudahan, harga terjangkau
-            </span>{" "}
-            dan <span style={{ fontWeight: "bold" }}>kualitas unggul</span>{" "}
-            untuk mengoptimalkan potensi bisnis Anda.
-          </Text>
           <Button
             marginTop={3}
             rightIcon={<IoArrowForwardCircleOutline />}
@@ -52,14 +39,27 @@ const HeroSections = () => {
             Pesan Sekarang
           </Button>
         </Stack>
-        <Stack width="80%">
-          <Image
-            src={heroImg}
-            alt="hero image"
-            layout="responsive"
-            objectFit="cover"
-            objectPosition="center"
-          />
+        <Stack gap={3}>
+          <Text>
+            Selain layanan web builder, layanan lain yaitu jasa design flyer,
+            logo, id card dan lain-lain yang berkaitan dengan digital promote
+            atau branding. Jadi, Qreative Tech berfokus pada layanan{" "}
+            <span style={{ fontWeight: "bold" }}>digital kreatif</span> dan{" "}
+            <span style={{ fontWeight: "bold" }}>tech service</span>.
+          </Text>
+          <Text>
+            Qreative Tech dimulai pada tahun 2024, walaupun terbilang masih
+            dini, kami akan memberikan pelayanan semaksimal mungkin dengan{" "}
+            <span style={{ fontWeight: "bold" }}>evaluasi berkala</span> agar
+            kami tetap terus berkembang.
+          </Text>
+          <Text>
+            Kami berkomitmen untuk menjaga{" "}
+            <span style={{ fontWeight: "bold" }}>kualitas pelayanan</span>,
+            menerima segala kritik maupun saran customer dan melakukan layanan
+            dengan sepenuh hati kepada customer. Kami berharap layanan kami
+            dapat membantu customer dan sesuai dengan yang customer harapkan.
+          </Text>
         </Stack>
       </Stack>
       <Stack overflow="hidden" zIndex={10}>
