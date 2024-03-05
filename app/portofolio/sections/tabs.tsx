@@ -1,5 +1,8 @@
 import {
+  AspectRatio,
+  Button,
   HStack,
+  Heading,
   Stack,
   Tab,
   TabList,
@@ -10,12 +13,14 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { BsCheckCircleFill } from "react-icons/bs";
+import GaleryPortofolio from "./GaleryPortofolio";
+import { IoArrowForwardCircleOutline } from "react-icons/io5";
 
 const TabsSections = () => {
   return (
-    <Stack paddingY={10} paddingX={5} minHeight="80vh">
-      <Tabs>
-        <TabList border="none">
+    <Stack minHeight="80vh">
+      <Tabs paddingTop={10}>
+        <TabList border="none" paddingX={5}>
           <Tab
             _selected={{ borderColor: "primary.dark", fontWeight: "semibold" }}
           >
@@ -30,7 +35,7 @@ const TabsSections = () => {
 
         <TabPanels>
           <TabPanel>
-            <Stack>
+            <Stack paddingX={5} paddingBottom={10}>
               <Text>
                 Selain layanan web builder, layanan lain yaitu jasa design
                 flyer, logo, id card dan lain-lain yang berkaitan dengan digital
@@ -58,9 +63,33 @@ const TabsSections = () => {
                 </HStack>
               </Stack>
             </Stack>
+            <Stack marginX={-5}>
+              <GaleryPortofolio />
+            </Stack>
           </TabPanel>
           <TabPanel>
-            <p>two!</p>
+            <Stack width="full">
+              <AspectRatio ratio={16 / 9}>
+                <iframe
+                  src="https://www.youtube.com/embed/eKdkigGYFpE?si=IpFbhhQRIlPI0ah8"
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                />
+              </AspectRatio>
+              <Stack alignItems="center" gap={4} marginTop={6}>
+                <Heading as="h2" size="md">
+                  Pesan Website seperti ini sekarang
+                </Heading>
+                <Button
+                  rounded="full"
+                  colorScheme="red"
+                  rightIcon={<IoArrowForwardCircleOutline />}
+                >
+                  Pesan Sekarang
+                </Button>
+                <Button rounded="full">Konsultasi Dulu</Button>
+              </Stack>
+            </Stack>
           </TabPanel>
         </TabPanels>
       </Tabs>
