@@ -4,7 +4,6 @@ import Image from "next/image";
 
 // background image
 import bgImg from "../../assets/bg.png";
-import heroImg from "@/assets/hero.png";
 import { Button, Heading, Stack, Text } from "@chakra-ui/react";
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
 
