@@ -1,5 +1,5 @@
 "use client";
-import { Heading, Stack, Text } from "@chakra-ui/react";
+import { Heading, Stack, Text, useBreakpointValue } from "@chakra-ui/react";
 import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -9,16 +9,18 @@ import { portofolios } from "../data";
 import PortofolioProps from "@/types/portofolio";
 
 const ProductSections = () => {
+  const isMobile = useBreakpointValue({ base: true, md: false }) ?? false;
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: isMobile ? 1 : 3,
     slidesToScroll: 1,
+    arrows: true,
   };
 
   return (
-    <Stack marginBottom={50} overflow="hidden">
+    <Stack marginBottom={50} overflow="hidden" marginY={8}>
       <Stack padding={5}>
         {/* heading */}
         <Stack textAlign="center">
@@ -29,11 +31,17 @@ const ProductSections = () => {
         </Stack>
 
         {/* body content */}
-        <Slider {...settings}>
-          {portofolios.map((item: PortofolioProps, index: number) => (
-            <CardPortofolio key={index} {...item} />
-          ))}
-        </Slider>
+        <Stack
+          zIndex={10}
+          paddingX={{ base: 0, md: 8 }}
+          marginTop={{ base: 0, md: 8 }}
+        >
+          <Slider {...settings}>
+            {portofolios.map((item: PortofolioProps, index: number) => (
+              <CardPortofolio key={index} {...item} />
+            ))}
+          </Slider>
+        </Stack>
       </Stack>
     </Stack>
   );

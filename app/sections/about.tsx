@@ -8,7 +8,12 @@ import CatImg from "@/assets/cat.png";
 const AboutSections = () => {
   return (
     <Stack bgColor="#FBFBFB" position="relative" marginTop={14}>
-      <Stack position="absolute" top={-36} maxWidth="full" left="20%">
+      <Stack
+        position="absolute"
+        top={-36}
+        maxWidth="full"
+        left={{ base: "20%", md: "50%" }}
+      >
         <Image src={CatImg} alt="cat image" />
       </Stack>
       <Stack paddingX={5} paddingY={16} gap={8}>

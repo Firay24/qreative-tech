@@ -12,7 +12,7 @@ const CallActionSections = () => {
       paddingX={{ base: 5, md: 12 }}
       width="full"
     >
-      <Stack width="50%">
+      <Stack width={{ base: "full", md: "50%" }}>
         <Text
           fontSize={{ base: "2xl", md: "4xl" }}
           fontWeight="bold"
@@ -25,7 +25,7 @@ const CallActionSections = () => {
       <Flex
         gap={4}
         marginTop={3}
-        width="50%"
+        width={{ base: "full", md: "50%" }}
         direction={{ base: "column", md: "row" }}
         alignItems="center"
       >
