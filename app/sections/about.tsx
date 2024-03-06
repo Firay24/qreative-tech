@@ -23,9 +23,12 @@ const AboutSections = () => {
         gap={{ base: 8, md: 14 }}
         direction={{ base: "column", md: "row" }}
         alignItems={"center"}
+        width="full"
       >
-        <Image src={AbaoutImg} alt="image about" />
-        <Stack gap={{ base: 4, md: 8 }}>
+        <Stack width={{ base: "60%", md: "40%" }}>
+          <Image src={AbaoutImg} alt="image about" width={2000} />
+        </Stack>
+        <Stack gap={{ base: 4, md: 8 }} width={{ base: "full", md: "60%" }}>
           <Heading
             as="h2"
             size={{ base: "xl", md: "2xl" }}

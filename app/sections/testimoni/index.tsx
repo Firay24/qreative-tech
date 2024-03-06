@@ -22,12 +22,17 @@ const TestimoniSections = () => {
     autoplaySpeed: 3000,
   };
   return (
-    <Stack marginTop={5} position="relative" paddingBottom={8}>
+    <Stack marginTop={5} position="relative" paddingBottom={8} paddingTop={10}>
       <Stack position="absolute" top="40%">
         <Image src={LineImg} alt="line img" />
       </Stack>
       <Stack padding={5} textAlign="center" gap={8}>
-        <Heading as="h2" size="xl" fontWeight="semibold" color="primary.dark">
+        <Heading
+          as="h2"
+          size={{ base: "xl", md: "2xl" }}
+          fontWeight="semibold"
+          color="primary.dark"
+        >
           What our clients say
         </Heading>
         <Stack>
