@@ -1,5 +1,5 @@
 import ChartProps from "@/types/chart";
-import { Button, HStack, Stack, Text } from "@chakra-ui/react";
+import { Button, HStack, Spacer, Stack, Text } from "@chakra-ui/react";
 import React from "react";
 import { FaCircleCheck } from "react-icons/fa6";
 
@@ -11,6 +11,8 @@ const CardChart = ({ paket, price, desc, items, isMain }: ChartProps) => {
       borderColor="gray.300"
       rounded="xl"
       marginTop={5}
+      height="auto"
+      minWidth="323px"
     >
       <Stack
         alignItems="center"
@@ -41,26 +43,28 @@ const CardChart = ({ paket, price, desc, items, isMain }: ChartProps) => {
         </Stack>
       </Stack>
 
-      <Stack marginY={6} paddingX={5} color="primary.gray" gap={4}>
-        {items.map((item: string, index: number) => (
-          <HStack key={index}>
-            <FaCircleCheck />
-            <Text color="primary.dark">{item}</Text>
-          </HStack>
-        ))}
-      </Stack>
-
-      <Stack paddingX={3} marginBottom={8}>
-        <Button
-          bgColor={isMain ? "primary.yellow" : "primary.grayDark"}
-          _hover={{
-            backgroundColor: isMain ? "yellow.700" : "primary.grayDark",
-          }}
-          rounded="full"
-          color={isMain ? "primary.dark" : "white"}
-        >
-          Get Started
-        </Button>
+      <Stack height="full">
+        <Stack marginY={6} paddingX={5} color="primary.gray" gap={4}>
+          {items.map((item: string, index: number) => (
+            <HStack key={index}>
+              <FaCircleCheck />
+              <Text color="primary.dark">{item}</Text>
+            </HStack>
+          ))}
+        </Stack>
+        <Spacer />
+        <Stack paddingX={3} marginBottom={8}>
+          <Button
+            bgColor={isMain ? "primary.yellow" : "primary.grayDark"}
+            _hover={{
+              backgroundColor: isMain ? "yellow.700" : "primary.grayDark",
+            }}
+            rounded="full"
+            color={isMain ? "primary.dark" : "white"}
+          >
+            Get Started
+          </Button>
+        </Stack>
       </Stack>
     </Stack>
   );

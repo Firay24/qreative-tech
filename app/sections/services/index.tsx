@@ -1,4 +1,11 @@
-import { Heading, Stack, Text } from "@chakra-ui/react";
+import {
+  Flex,
+  GridItem,
+  Heading,
+  SimpleGrid,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
 import React from "react";
 import CardChart from "./cardChart";
 import { services } from "../data";
@@ -12,7 +19,12 @@ const ServicesSection = () => {
       <Stack position="absolute">
         <Image src={TitleImg} alt="coint img" />
       </Stack>
-      <Stack padding={5} textAlign="center">
+      <Stack
+        paddingY={{ base: 5, md: 10 }}
+        paddingX={{ base: 5, md: 12 }}
+        textAlign="center"
+        gap={6}
+      >
         {/* heading */}
         <Stack>
           <Heading as="h2" size="xl" fontWeight="medium">
@@ -28,11 +40,18 @@ const ServicesSection = () => {
         </Stack>
 
         {/* body content */}
-        <Stack>
+        <Flex
+          gap={4}
+          direction={{ base: "column", md: "row" }}
+          alignItems="stretch"
+          wrap="wrap"
+          width="full"
+          justifyContent="center"
+        >
           {services.map((item: ChartProps, index: number) => (
             <CardChart key={index} {...item} />
           ))}
-        </Stack>
+        </Flex>
       </Stack>
     </Stack>
   );
