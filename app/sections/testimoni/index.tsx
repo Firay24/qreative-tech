@@ -26,7 +26,7 @@ const TestimoniSections = () => {
       <Stack position="absolute" top="40%">
         <Image src={LineImg} alt="line img" />
       </Stack>
-      <Stack padding={5} textAlign="center" gap={8}>
+      <Stack padding={5} textAlign="center" gap={{ base: 8, md: 12 }}>
         <Heading
           as="h2"
           size={{ base: "xl", md: "2xl" }}

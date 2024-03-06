@@ -11,6 +11,7 @@ const FormContact = () => {
       paddingY={7}
       marginTop={5}
       rounded="xl"
+      width={{ base: "full", md: "60%" }}
     >
       {fields.map((item: string, index: number) => (
         <Input
