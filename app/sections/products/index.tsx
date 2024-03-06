@@ -18,7 +18,7 @@ const ProductSections = () => {
   };
 
   return (
-    <Stack marginBottom={50}>
+    <Stack marginBottom={50} overflow="hidden">
       <Stack padding={5}>
         {/* heading */}
         <Stack textAlign="center">

@@ -49,7 +49,7 @@ const Navbar = () => {
         justifyContent="space-between"
         width="full"
         bgColor="primary.yellow"
-        paddingX={{ base: 4, md: 6 }}
+        paddingX={{ base: 4, md: 14 }}
         paddingY={{ base: 3, md: 6 }}
       >
         <Stack width={{ base: "45%", md: "10%" }}>

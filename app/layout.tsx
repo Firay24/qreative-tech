@@ -25,7 +25,7 @@ export default function RootLayout({
         <Providers>
           <Stack>
             <Navbar />
-            <Stack marginTop={16}>{children}</Stack>
+            <Stack marginTop={12}>{children}</Stack>
             <Footer />
           </Stack>
         </Providers>

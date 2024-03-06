@@ -32,8 +32,8 @@ const CardPortofolio = ({ title, desc, img }: PortofolioProps) => {
           </Text>
         </HStack>
       </HStack>
-      <Stack>
-        <Image src={img} alt="portofolio image" />
+      <Stack width="full">
+        <Image src={img} alt="portofolio image" width={1000} />
       </Stack>
       <Stack marginTop={3} paddingX={3} paddingBottom={5} roundedBottom="md">
         <Text fontSize="20px" fontWeight="semibold">

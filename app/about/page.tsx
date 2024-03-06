@@ -1,6 +1,6 @@
 import { Stack, Text } from "@chakra-ui/react";
 import React from "react";
-import HeroSections from "../sections/hero";
+import HeroSections from "../about/sections/hero";
 import AccordionVision from "./sections/accordionVision";
 import Image from "next/image";
 import AboutImg from "@/assets/about.png";
