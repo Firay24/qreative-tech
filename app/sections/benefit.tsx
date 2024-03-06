@@ -63,7 +63,7 @@ const BenefitSection = () => {
 
         {/* benefit items */}
         <SimpleGrid
-          marginTop={5}
+          marginTop={{ base: 5, md: 10 }}
           spacing={8}
           templateColumns={{
             base: "repeat(1, 1fr)",
