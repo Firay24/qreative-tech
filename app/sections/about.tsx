@@ -1,9 +1,10 @@
-import { HStack, Heading, Stack, Text } from "@chakra-ui/react";
+import { Flex, HStack, Heading, Stack, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import React from "react";
 import AbaoutImg from "@/assets/aboutme.png";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import CatImg from "@/assets/cat.png";
+import Link from "next/link";
 
 const AboutSections = () => {
   return (
@@ -12,17 +13,27 @@ const AboutSections = () => {
         position="absolute"
         top={-36}
         maxWidth="full"
-        left={{ base: "20%", md: "50%" }}
+        left={{ base: "20%", md: "40%" }}
       >
         <Image src={CatImg} alt="cat image" />
       </Stack>
-      <Stack paddingX={5} paddingY={16} gap={8}>
+      <Flex
+        paddingY={16}
+        paddingX={{ base: 5, md: 12 }}
+        gap={{ base: 8, md: 14 }}
+        direction={{ base: "column", md: "row" }}
+        alignItems={"center"}
+      >
         <Image src={AbaoutImg} alt="image about" />
-        <Stack gap={4}>
-          <Heading as="h2" size="xl" fontWeight="semibold">
+        <Stack gap={{ base: 4, md: 8 }}>
+          <Heading
+            as="h2"
+            size={{ base: "xl", md: "2xl" }}
+            fontWeight="semibold"
+          >
             Tentang Kami
           </Heading>
-          <Text color="#555454">
+          <Text color="#555454" fontSize={{ base: "16px", md: "20px" }}>
             Qreative Tech merupakan sebuah digital agency spesialis yang
             menyediakan layananan pembuatan website kebutuhan industri,
             perusahaan maupun personal. Qreative Tech dimulai pada tahun 2024,
@@ -30,12 +41,20 @@ const AboutSections = () => {
             semaksimal mungkin dengan evaluasi berkala agar kami tetap terus
             berkembang.
           </Text>
-          <HStack marginTop={6} fontWeight="bold" color="primary.gray">
-            <Text>Read More</Text>
-            <IoIosArrowRoundForward />
-          </HStack>
+          <Link href="/about">
+            <HStack
+              marginTop={6}
+              fontWeight="bold"
+              color="primary.gray"
+              fontSize={{ base: "16px", md: "20px" }}
+              _hover={{ color: "primary.dark" }}
+            >
+              <Text>Read More</Text>
+              <IoIosArrowRoundForward />
+            </HStack>
+          </Link>
         </Stack>
-      </Stack>
+      </Flex>
     </Stack>
   );
 };

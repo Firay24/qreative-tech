@@ -7,6 +7,25 @@ import "slick-carousel/slick/slick-theme.css";
 import CardPortofolio from "./cardPortofolio";
 import { portofolios } from "../data";
 import PortofolioProps from "@/types/portofolio";
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
+
+const SamplePrevArrow = (props: any) => {
+  const { className, style, onClick } = props;
+  return (
+    <div onClick={onClick} className={`arrow ${className}`}>
+      <AiOutlineArrowLeft className="arrows" style={{ color: "white" }} />
+    </div>
+  );
+};
+
+function SampleNextArrow(props: any) {
+  const { className, style, onClick } = props;
+  return (
+    <div onClick={onClick} className={`arrow ${className}`}>
+      <AiOutlineArrowRight className="arrows" style={{ color: "white" }} />
+    </div>
+  );
+}
 
 const ProductSections = () => {
   const isMobile = useBreakpointValue({ base: true, md: false }) ?? false;
@@ -17,6 +36,8 @@ const ProductSections = () => {
     slidesToShow: isMobile ? 1 : 3,
     slidesToScroll: 1,
     arrows: true,
+    nextArrow: <SampleNextArrow to="next" />,
+    prevArrow: <SamplePrevArrow to="prev" />,
   };
 
   return (
