@@ -31,7 +31,7 @@ const FormContact = () => {
       <Stack marginTop={3}>
         <Button
           bgColor="primary.yellow"
-          _hover={{ bgColor: "yellow.700" }}
+          _hover={{ bgColor: "yellow.500" }}
           rounded="full"
           width="full"
         >

@@ -9,11 +9,13 @@ import {
   AccordionIcon,
   AccordionItem,
   AccordionPanel,
+  Button,
   Fade,
   HStack,
   IconButton,
   Stack,
   Text,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 
 // assets
@@ -21,33 +23,17 @@ import LogoImg from "@/assets/logo.png";
 
 // icons
 import { IoIosMenu, IoMdClose } from "react-icons/io";
+import MenuList from "./menuList";
+import { menus } from "../data";
+import MenusProps from "@/types/menus";
+import Link from "next/link";
+import { MdKeyboardArrowDown } from "react-icons/md";
+import DropDownMenu from "./dropDown";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const menus = [
-    {
-      label: "Home",
-      path: "/",
-    },
-    {
-      label: "Service",
-      path: "/service",
-      isAccordion: true,
-      childs: ["Basic Web", "Premium Middle", "Platinum Advance"],
-    },
-    {
-      label: "Product",
-      path: "/product",
-    },
-    {
-      label: "About",
-      path: "/about",
-    },
-    {
-      label: "Contact Us",
-      path: "/contact",
-    },
-  ];
+  const isMobile = useBreakpointValue({ base: true, md: false }) ?? false;
+
   return (
     <Stack
       alignItems="center"
@@ -63,10 +49,10 @@ const Navbar = () => {
         justifyContent="space-between"
         width="full"
         bgColor="primary.yellow"
-        paddingX={4}
-        paddingY={3}
+        paddingX={{ base: 4, md: 6 }}
+        paddingY={{ base: 3, md: 6 }}
       >
-        <Stack width="45%">
+        <Stack width={{ base: "45%", md: "10%" }}>
           <Image
             src={LogoImg}
             alt="logo image"
@@ -75,80 +61,51 @@ const Navbar = () => {
             objectPosition="center"
           />
         </Stack>
-        <IconButton
-          variant="ghost"
-          aria-label="menu"
-          onClick={() => setIsOpen(!isOpen)}
-          color="primary.dark"
-          fontSize="32px"
-        >
-          {isOpen ? <IoMdClose /> : <IoIosMenu />}
-        </IconButton>
+
+        {isMobile ? (
+          <IconButton
+            variant="ghost"
+            aria-label="menu"
+            onClick={() => setIsOpen(!isOpen)}
+            color="primary.dark"
+            fontSize="32px"
+          >
+            {isOpen ? <IoMdClose /> : <IoIosMenu />}
+          </IconButton>
+        ) : (
+          <HStack gap={3}>
+            {menus.map((item: MenusProps, index: number) => (
+              <>
+                {item.isAccordion && item.childs ? (
+                  <DropDownMenu items={item.childs} label={item.label} />
+                ) : (
+                  <Link key={index} href={item.path}>
+                    <Stack
+                      paddingY={1}
+                      paddingX={3}
+                      _hover={{ bgColor: "white", rounded: "full" }}
+                    >
+                      <Text fontWeight="medium">{item.label}</Text>
+                    </Stack>
+                  </Link>
+                )}
+              </>
+            ))}
+          </HStack>
+        )}
+        {!isMobile ? (
+          <Button
+            rounded="full"
+            bgColor="white"
+            _hover={{ bgColor: "gray.50" }}
+          >
+            Cek Harga
+          </Button>
+        ) : null}
       </HStack>
 
       {/* menu section */}
-      <Fade in={isOpen}>
-        {isOpen ? (
-          <Stack
-            left={0}
-            width="full"
-            position="fixed"
-            bgColor="white"
-            overflow="hidden"
-            padding={6}
-            gap={4}
-          >
-            {menus.map(
-              (
-                item: {
-                  label: string;
-                  path: string;
-                  isAccordion?: boolean;
-                  childs?: string[];
-                },
-                index: number
-              ) =>
-                !item.isAccordion ? (
-                  <Text
-                    key={index}
-                    fontWeight="medium"
-                    color="primary.dark"
-                    width="full"
-                    textAlign="center"
-                  >
-                    {item.label}
-                  </Text>
-                ) : (
-                  <Accordion allowToggle key={index}>
-                    <AccordionItem border="none">
-                      <AccordionButton justifyContent="center" paddingY={0}>
-                        <Text fontWeight="medium" color="primary.dark">
-                          {item.label}
-                        </Text>
-                        <AccordionIcon />
-                      </AccordionButton>
-                      <AccordionPanel paddingBottom={0}>
-                        <Stack gap={4}>
-                          {item.childs?.map((menu: string, index: number) => (
-                            <Text
-                              key={index}
-                              fontWeight="medium"
-                              color="primary.dark"
-                              width="full"
-                              textAlign="center"
-                            >
-                              {menu}
-                            </Text>
-                          ))}
-                        </Stack>
-                      </AccordionPanel>
-                    </AccordionItem>
-                  </Accordion>
-                )
-            )}
-          </Stack>
-        ) : null}
-      </Fade>
+      <MenuList isOpen={isOpen} />
     </Stack>
   );
 };
