@@ -4,31 +4,37 @@ import Image from "next/image";
 
 // background image
 import bgImg from "@/assets/bg.png";
-import { Button, Heading, Stack, Text } from "@chakra-ui/react";
+import { Button, Flex, Heading, Stack, Text } from "@chakra-ui/react";
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
 
 const HeroSections = () => {
   return (
-    <Stack position="relative" id="home">
-      <Stack
+    <Stack position="relative" id="home" marginTop={{ base: "8%", md: "2%" }}>
+      <Flex
         zIndex={50}
-        paddingX={5}
-        gap={5}
-        alignItems="center"
-        justifyContent="center"
+        paddingX={{ base: 5, md: 12 }}
+        gap={{ base: 5, md: 14 }}
         paddingY={10}
-        minHeight={{ base: 0, md: "100vh" }}
+        minHeight={{ base: 0, md: "88vh" }}
+        direction={{ base: "column", md: "row" }}
+        alignItems="center"
       >
-        <Stack justifyContent="center">
-          <Text>Selamat datang di Qreative Tech</Text>
+        <Stack width={{ base: "full", md: "40%" }} gap={{ base: 2, md: 5 }}>
+          <Text
+            fontWeight={{ base: "normal", md: "medium" }}
+            fontSize={{ base: "16px", md: "20px" }}
+          >
+            Selamat datang di Qreative Tech
+          </Text>
           <Heading
             as="h1"
-            size="2xl"
+            size={{ base: "2xl", md: "3xl" }}
             fontWeight="bold"
             color="#1E1E1E"
-            marginTop={2}
           >
-            Jasa pembuatan website murah dan terpercaya
+            <span style={{ lineHeight: 1.1 }}>
+              Jasa pembuatan website murah dan terpercaya
+            </span>
           </Heading>
           <Button
             marginTop={3}
@@ -39,7 +45,11 @@ const HeroSections = () => {
             Pesan Sekarang
           </Button>
         </Stack>
-        <Stack gap={3}>
+        <Stack
+          gap={3}
+          width={{ base: "full", md: "60%" }}
+          fontSize={{ base: "16px", md: "20px" }}
+        >
           <Text>
             Selain layanan web builder, layanan lain yaitu jasa design flyer,
             logo, id card dan lain-lain yang berkaitan dengan digital promote
@@ -61,7 +71,7 @@ const HeroSections = () => {
             dapat membantu customer dan sesuai dengan yang customer harapkan.
           </Text>
         </Stack>
-      </Stack>
+      </Flex>
       <Stack overflow="hidden" zIndex={10}>
         <Image
           src={bgImg}
