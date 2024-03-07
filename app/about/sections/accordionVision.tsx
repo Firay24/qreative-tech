@@ -27,7 +27,7 @@ const AccordionVision = () => {
   };
 
   return (
-    <Stack paddingY={10} paddingX={5} width="full">
+    <Stack paddingY={10} paddingX={5} width="100%">
       <Accordion allowToggle defaultIndex={[0]}>
         <AccordionItem border="none">
           <AccordionButton paddingY={3} onClick={() => toggleExpanded(0)}>
