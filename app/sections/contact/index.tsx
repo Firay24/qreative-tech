@@ -4,10 +4,20 @@ import { FiPhone } from "react-icons/fi";
 import { GoMail } from "react-icons/go";
 import { SlLocationPin } from "react-icons/sl";
 import FormContact from "./formContact";
+import TitleImg from "@/assets/title.png";
+import Image from "next/image";
 
 const ContactSections = () => {
   return (
     <Stack id="contact">
+      <Stack
+        position="absolute"
+        bottom={{ base: "10%", md: "3%" }}
+        left={{ base: undefined, md: 10 }}
+        right={{ base: 10, md: undefined }}
+      >
+        <Image src={TitleImg} alt="title logo image" />
+      </Stack>
       <Flex
         direction={{ base: "column", md: "row" }}
         paddingY={{ base: 5, md: 10 }}

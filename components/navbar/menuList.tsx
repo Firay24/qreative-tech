@@ -77,9 +77,9 @@ const MenuList = ({ isOpen }: { isOpen: boolean }) => {
                             smooth={true}
                             duration={500}
                             spy={true}
+                            key={index}
                           >
                             <Text
-                              key={index}
                               fontWeight="medium"
                               color="primary.dark"
                               width="full"

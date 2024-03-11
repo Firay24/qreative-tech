@@ -23,8 +23,8 @@ const TestimoniSections = () => {
   };
   return (
     <Stack marginTop={5} position="relative" paddingBottom={8} paddingTop={10}>
-      <Stack position="absolute" top="40%">
-        <Image src={LineImg} alt="line img" />
+      <Stack position="absolute" top="40%" width="full">
+        <Image src={LineImg} alt="line img" width={10000} />
       </Stack>
       <Stack padding={5} textAlign="center" gap={{ base: 8, md: 12 }}>
         <Heading
