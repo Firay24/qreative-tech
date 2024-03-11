@@ -72,29 +72,39 @@ export const services = [
 
 export const portofolios = [
   {
+    id: 1,
     title: "Idekeen: Landing Page",
     desc: "Intip sebagian dari proyek-proyek website terbaik kami",
     img: PortofolioImg,
+    paket: "Basic Web",
   },
   {
+    id: 2,
     title: "Dashboard Event Manajemen",
     desc: "Intip sebagian dari proyek-proyek website terbaik kami",
     img: PortofolioImg,
+    paket: "Platinum Expert",
   },
   {
+    id: 3,
     title: "Quizz App",
     desc: "Intip sebagian dari proyek-proyek website terbaik kami",
     img: PortofolioImg,
+    paket: "Premium Middle",
   },
   {
+    id: 4,
     title: "Books App",
     desc: "Intip sebagian dari proyek-proyek website terbaik kami",
     img: PortofolioImg,
+    paket: "Premium Middle",
   },
   {
+    id: 5,
     title: "Idekeen: Laboratorium Riset",
     desc: "Intip sebagian dari proyek-proyek website terbaik kami",
     img: PortofolioImg,
+    paket: "Basic Web",
   },
 ];
 

@@ -5,8 +5,9 @@ import { BsThreeDots } from "react-icons/bs";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { GoArrowRight } from "react-icons/go";
 import PortofolioProps from "@/types/portofolio";
+import Link from "next/link";
 
-const CardPortofolio = ({ title, desc, img }: PortofolioProps) => {
+const CardPortofolio = ({ title, desc, img, id }: PortofolioProps) => {
   return (
     <Stack paddingX={{ base: 0, md: 3 }} paddingBottom={8}>
       <Stack
@@ -37,9 +38,15 @@ const CardPortofolio = ({ title, desc, img }: PortofolioProps) => {
           <Image src={img} alt="portofolio image" width={1000} />
         </Stack>
         <Stack marginTop={3} paddingX={3} paddingBottom={5} roundedBottom="md">
-          <Text fontSize="20px" fontWeight="semibold">
-            {title}
-          </Text>
+          <Link href={`/portofolio/${id}`}>
+            <Text
+              fontSize="20px"
+              fontWeight="semibold"
+              _hover={{ color: "primary.yellow" }}
+            >
+              {title}
+            </Text>
+          </Link>
           <Text color="primary.gray" fontWeight="medium">
             {desc}
           </Text>

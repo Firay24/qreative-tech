@@ -72,7 +72,12 @@ const MenuList = ({ isOpen }: { isOpen: boolean }) => {
                           menu: { label: string; path: string },
                           index: number
                         ) => (
-                          <NextLink href={menu.path}>
+                          <Link
+                            to={menu.path}
+                            smooth={true}
+                            duration={500}
+                            spy={true}
+                          >
                             <Text
                               key={index}
                               fontWeight="medium"
@@ -82,7 +87,7 @@ const MenuList = ({ isOpen }: { isOpen: boolean }) => {
                             >
                               {menu.label}
                             </Text>
-                          </NextLink>
+                          </Link>
                         )
                       )}
                     </Stack>

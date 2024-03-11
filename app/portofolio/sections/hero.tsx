@@ -13,7 +13,7 @@ import bgImg from "@/assets/bg.png";
 import IdekeenImg from "@/assets/logo/idekeen.jpg";
 import { FaStar } from "react-icons/fa6";
 
-const HeroSections = () => {
+const HeroSections = ({ title, paket }: { title: string; paket: string }) => {
   const isMobile = useBreakpointValue({ base: true, md: false }) ?? false;
   return (
     <Stack position="relative" id="home">
@@ -54,10 +54,10 @@ const HeroSections = () => {
             ) : null}
             <Stack>
               <Heading as="h1" size="xl" color="primary.dark">
-                Idekeen: Landing Page
+                {title}
               </Heading>
               <Text fontSize="18px" fontWeight="semibold" color="yellow.700">
-                Basic Web
+                {paket}
               </Text>
             </Stack>
           </Stack>

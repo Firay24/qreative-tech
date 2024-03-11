@@ -12,15 +12,15 @@ export const menus = [
     childs: [
       {
         label: "Basic Web",
-        path: "/basic",
+        path: "service",
       },
       {
         label: "Premium Middle",
-        path: "/midle",
+        path: "service",
       },
       {
         label: "Platinum Advance",
-        path: "/advance",
+        path: "service",
       },
     ],
   },

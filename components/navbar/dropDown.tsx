@@ -1,6 +1,6 @@
 import { Stack, Text } from "@chakra-ui/react";
 import { Dropdown, Menu, Space } from "antd";
-import Link from "next/link";
+import { Link } from "react-scroll";
 import React from "react";
 import { IoIosArrowDown } from "react-icons/io";
 
@@ -15,7 +15,9 @@ const DropDownMenu = ({
     <Menu>
       {items.map((item: { label: string; path: string }, index: number) => (
         <Menu.Item key={index}>
-          <Link href={item.path}>{item.label}</Link>
+          <Link to={item.path} smooth={true} duration={500} spy={true}>
+            {item.label}
+          </Link>
         </Menu.Item>
       ))}
     </Menu>
