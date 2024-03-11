@@ -26,13 +26,15 @@ import { IoIosMenu, IoMdClose } from "react-icons/io";
 import MenuList from "./menuList";
 import { menus } from "../data";
 import MenusProps from "@/types/menus";
-import Link from "next/link";
-import { MdKeyboardArrowDown } from "react-icons/md";
 import DropDownMenu from "./dropDown";
+import { Link } from "react-scroll";
+import NextLink from "next/link";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const isMobile = useBreakpointValue({ base: true, md: false }) ?? false;
+  const location = usePathname();
 
   return (
     <Stack
@@ -73,13 +75,29 @@ const Navbar = () => {
             {isOpen ? <IoMdClose /> : <IoIosMenu />}
           </IconButton>
         ) : (
-          <HStack gap={3}>
+          <HStack gap={3} cursor="pointer">
             {menus.map((item: MenusProps, index: number) => (
               <>
                 {item.isAccordion && item.childs ? (
                   <DropDownMenu items={item.childs} label={item.label} />
+                ) : location !== "/" ? (
+                  <NextLink href={item.path}>
+                    <Stack
+                      paddingY={1}
+                      paddingX={3}
+                      _hover={{ bgColor: "white", rounded: "full" }}
+                    >
+                      <Text fontWeight="medium">{item.label}</Text>
+                    </Stack>
+                  </NextLink>
                 ) : (
-                  <Link key={index} href={item.path}>
+                  <Link
+                    key={index}
+                    to={item.to}
+                    smooth={true}
+                    duration={500}
+                    spy={true}
+                  >
                     <Stack
                       paddingY={1}
                       paddingX={3}
@@ -94,13 +112,15 @@ const Navbar = () => {
           </HStack>
         )}
         {!isMobile ? (
-          <Button
-            rounded="full"
-            bgColor="white"
-            _hover={{ bgColor: "gray.50" }}
-          >
-            Cek Harga
-          </Button>
+          <Link to="service" smooth={true} duration={500} spy={true}>
+            <Button
+              rounded="full"
+              bgColor="white"
+              _hover={{ bgColor: "gray.50" }}
+            >
+              Cek Harga
+            </Button>
+          </Link>
         ) : null}
       </HStack>
 

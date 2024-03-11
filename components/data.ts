@@ -2,36 +2,41 @@ export const menus = [
   {
     label: "Home",
     path: "/",
+    to: "home",
   },
   {
     label: "Service",
-    path: "/service",
+    path: "/#service",
+    to: "service",
     isAccordion: true,
     childs: [
       {
         label: "Basic Web",
-        path: "/",
+        path: "/basic",
       },
       {
         label: "Premium Middle",
-        path: "/",
+        path: "/midle",
       },
       {
         label: "Platinum Advance",
-        path: "/",
+        path: "/advance",
       },
     ],
   },
   {
     label: "Product",
-    path: "/product",
+    path: "/#product",
+    to: "product",
   },
   {
     label: "About",
-    path: "/about",
+    path: "/#about",
+    to: "about",
   },
   {
     label: "Contact Us",
-    path: "/contact",
+    path: "/#contact",
+    to: "contact",
   },
 ];

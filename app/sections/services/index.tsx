@@ -15,7 +15,7 @@ import Image from "next/image";
 
 const ServicesSection = () => {
   return (
-    <Stack position="relative">
+    <Stack position="relative" id="service">
       <Stack position="absolute">
         <Image src={TitleImg} alt="coint img" />
       </Stack>

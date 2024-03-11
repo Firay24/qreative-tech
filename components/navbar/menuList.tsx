@@ -11,9 +11,12 @@ import {
 import React from "react";
 import { menus } from "../data";
 import MenusProps from "@/types/menus";
-import Link from "next/link";
+import NextLink from "next/link";
+import { Link } from "react-scroll";
+import { usePathname } from "next/navigation";
 
 const MenuList = ({ isOpen }: { isOpen: boolean }) => {
+  const location = usePathname();
   return (
     <Fade in={isOpen}>
       {isOpen ? (
@@ -28,15 +31,31 @@ const MenuList = ({ isOpen }: { isOpen: boolean }) => {
         >
           {menus.map((item: MenusProps, index: number) =>
             !item.isAccordion ? (
-              <Text
-                key={index}
-                fontWeight="medium"
-                color="primary.dark"
-                width="full"
-                textAlign="center"
-              >
-                {item.label}
-              </Text>
+              location === "/" ? (
+                <Link to={item.to} smooth={true} duration={500} spy={true}>
+                  <Text
+                    key={index}
+                    fontWeight="medium"
+                    color="primary.dark"
+                    width="full"
+                    textAlign="center"
+                  >
+                    {item.label}
+                  </Text>
+                </Link>
+              ) : (
+                <NextLink href={item.path}>
+                  <Text
+                    key={index}
+                    fontWeight="medium"
+                    color="primary.dark"
+                    width="full"
+                    textAlign="center"
+                  >
+                    {item.label}
+                  </Text>
+                </NextLink>
+              )
             ) : (
               <Accordion allowToggle key={index}>
                 <AccordionItem border="none">
@@ -53,7 +72,7 @@ const MenuList = ({ isOpen }: { isOpen: boolean }) => {
                           menu: { label: string; path: string },
                           index: number
                         ) => (
-                          <Link href={menu.path}>
+                          <NextLink href={menu.path}>
                             <Text
                               key={index}
                               fontWeight="medium"
@@ -63,7 +82,7 @@ const MenuList = ({ isOpen }: { isOpen: boolean }) => {
                             >
                               {menu.label}
                             </Text>
-                          </Link>
+                          </NextLink>
                         )
                       )}
                     </Stack>

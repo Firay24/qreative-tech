@@ -57,7 +57,7 @@ const CardChart = ({ paket, price, desc, items, isMain }: ChartProps) => {
           <Button
             bgColor={isMain ? "primary.yellow" : "primary.grayDark"}
             _hover={{
-              backgroundColor: isMain ? "yellow.700" : "primary.grayDark",
+              backgroundColor: isMain ? "yellow.500" : "gray.700",
             }}
             rounded="full"
             color={isMain ? "primary.dark" : "white"}

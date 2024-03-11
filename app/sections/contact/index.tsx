@@ -7,7 +7,7 @@ import FormContact from "./formContact";
 
 const ContactSections = () => {
   return (
-    <Stack>
+    <Stack id="contact">
       <Flex
         direction={{ base: "column", md: "row" }}
         paddingY={{ base: 5, md: 10 }}

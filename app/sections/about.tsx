@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const AboutSections = () => {
   return (
-    <Stack bgColor="#FBFBFB" position="relative" marginTop={14}>
+    <Stack bgColor="#FBFBFB" position="relative" marginTop={14} id="about">
       <Stack
         position="absolute"
         top={-36}
