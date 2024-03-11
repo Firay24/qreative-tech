@@ -10,7 +10,7 @@ import React from "react";
 import CardChart from "./cardChart";
 import { services } from "../data";
 import ChartProps from "@/types/chart";
-import TitleImg from "@/assets/Coin.png";
+import TitleImg from "@/assets/coin.png";
 import Image from "next/image";
 
 const ServicesSection = () => {
