@@ -12,18 +12,26 @@ import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 const SamplePrevArrow = (props: any) => {
   const { className, style, onClick } = props;
   return (
-    <div onClick={onClick} className={`arrow ${className}`}>
+    <Stack
+      onClick={onClick}
+      className={`arrow ${className}`}
+      marginLeft={{ base: 3, md: "auto" }}
+    >
       <AiOutlineArrowLeft className="arrows" style={{ color: "white" }} />
-    </div>
+    </Stack>
   );
 };
 
 function SampleNextArrow(props: any) {
   const { className, style, onClick } = props;
   return (
-    <div onClick={onClick} className={`arrow ${className}`}>
+    <Stack
+      onClick={onClick}
+      className={`arrow ${className}`}
+      marginRight={{ base: 3, md: "auto" }}
+    >
       <AiOutlineArrowRight className="arrows" style={{ color: "white" }} />
-    </div>
+    </Stack>
   );
 }
 

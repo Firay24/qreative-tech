@@ -24,7 +24,7 @@ const CardChart = ({ paket, price, desc, items, isMain }: ChartProps) => {
         paddingY={8}
         gap={1}
       >
-        <Text fontWeight="semibold" fontSize="20px">
+        <Text fontWeight="semibold" fontSize={{ base: "18px", md: "20px" }}>
           {paket}
         </Text>
         <Stack position="relative" width="fit-content">
@@ -33,12 +33,16 @@ const CardChart = ({ paket, price, desc, items, isMain }: ChartProps) => {
               start
             </Text>
           </Stack>
-          <Text fontSize="40px" fontWeight="semibold">
+          <Text fontSize={{ base: "35px", md: "40px" }} fontWeight="semibold">
             {price}
           </Text>
         </Stack>
         <Stack paddingX={6}>
-          <Text fontWeight="medium" color={isMain ? "yellow.700" : "gray.400"}>
+          <Text
+            fontWeight="medium"
+            fontSize={{ base: "14px", md: "16px" }}
+            color={isMain ? "yellow.700" : "gray.400"}
+          >
             {desc}
           </Text>
         </Stack>
@@ -47,7 +51,7 @@ const CardChart = ({ paket, price, desc, items, isMain }: ChartProps) => {
       <Stack height="full">
         <Stack marginY={6} paddingX={5} color="primary.gray" gap={4}>
           {items.map((item: string, index: number) => (
-            <HStack key={index}>
+            <HStack key={index} textAlign="left">
               <FaCircleCheck />
               <Text color="primary.dark">{item}</Text>
             </HStack>
@@ -56,6 +60,7 @@ const CardChart = ({ paket, price, desc, items, isMain }: ChartProps) => {
         <Spacer />
         <Stack paddingX={3} marginBottom={8}>
           <Link
+            target="_blank"
             href={`https://api.whatsapp.com/send?phone=6285231796284&text=Halo%20Admin%20Qreative%20Tech%0ASaya%3A%20%3CISI%20NAMA%20ANDA%3E%0AMau%20Order%20Website%20Paket%20${
               paket === "Premium Middle"
                 ? "Premium"
@@ -71,8 +76,7 @@ const CardChart = ({ paket, price, desc, items, isMain }: ChartProps) => {
               }}
               rounded="full"
               color={isMain ? "primary.dark" : "white"}
-              as="a"
-              target="_blank"
+              width="full"
             >
               Get Started
             </Button>

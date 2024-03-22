@@ -19,6 +19,7 @@ import GaleryPortofolio from "./GaleryPortofolio";
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
+import { FiLink } from "react-icons/fi";
 
 const TabsSections = ({
   details,
@@ -27,6 +28,8 @@ const TabsSections = ({
   techImg,
   demoLink,
   title,
+  link,
+  account,
 }: {
   details: string[];
   features: string[];
@@ -34,6 +37,8 @@ const TabsSections = ({
   techImg: StaticImageData[];
   demoLink: string;
   title: string;
+  link?: string;
+  account?: string[];
 }) => {
   return (
     <Stack minHeight="80vh" overflow="hidden" marginTop={{ base: 0, md: 24 }}>
@@ -66,6 +71,25 @@ const TabsSections = ({
               >
                 <Text>{details && details[0]}</Text>
                 <Text>{details && details[1]}</Text>
+                {link ? (
+                  <Link href={link}>
+                    <Button
+                      colorScheme="blue"
+                      size="sm"
+                      rounded="full"
+                      leftIcon={<FiLink />}
+                    >
+                      Menuju Halaman
+                    </Button>
+                  </Link>
+                ) : null}
+                {account ? (
+                  <Stack>
+                    <Text fontWeight="medium">Account Login</Text>
+                    <Text>{`Username: ${account[0]}`}</Text>
+                    <Text>{`Password: ${account[1]}`}</Text>
+                  </Stack>
+                ) : null}
               </Stack>
               <Stack
                 marginTop={{ base: 4, md: 0 }}
@@ -90,7 +114,7 @@ const TabsSections = ({
                   techImg.map((item: StaticImageData, index: number) => (
                     <Stack
                       key={index}
-                      width={200}
+                      width={{ base: 130, md: 200 }}
                       alignItems="center"
                       justifyContent="center"
                     >
@@ -132,25 +156,26 @@ const TabsSections = ({
                           ? "Basic"
                           : "Platinum"
                       }%0ATerima%20Kasih`}
+                      target="_blank"
                     >
                       <Button
-                        as="a"
                         rounded="full"
                         colorScheme="red"
                         rightIcon={<IoArrowForwardCircleOutline />}
                         size={{ base: "md", md: "lg" }}
-                        target="_blank"
                         width={"full"}
                       >
                         Pesan Sekarang
                       </Button>
                     </Link>
-                    <Link href="https://api.whatsapp.com/send?phone=6285231796284&text=Halo%20Admin%20Qreative%20Tech%0ASaya%3A%20%3CISI%20NAMA%20ANDA%3E%0AMau%20konsultasi%20terkait%20website%20saya%0ATerima%20Kasih">
+                    <Link
+                      target="_blank"
+                      href="https://api.whatsapp.com/send?phone=6285231796284&text=Halo%20Admin%20Qreative%20Tech%0ASaya%3A%20%3CISI%20NAMA%20ANDA%3E%0AMau%20konsultasi%20terkait%20website%20saya%0ATerima%20Kasih"
+                    >
                       <Button
                         as="a"
                         rounded="full"
                         size={{ base: "md", md: "lg" }}
-                        target="_blank"
                         width="full"
                       >
                         Konsultasi Dulu

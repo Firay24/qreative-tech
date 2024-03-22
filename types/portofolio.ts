@@ -12,6 +12,8 @@ interface PortofolioProps {
   demoImg: StaticImageData[];
   techImg: StaticImageData[];
   demoLink: string;
+  link?: string;
+  account?: string[];
 }
 
 export default PortofolioProps;

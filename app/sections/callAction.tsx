@@ -30,26 +30,24 @@ const CallActionSections = () => {
         direction={{ base: "column", md: "row" }}
         alignItems="center"
       >
-        <Link href="https://api.whatsapp.com/send?phone=6285231796284&text=Halo%20Admin%20Qreative%20Tech%0ASaya%3A%20%3CISI%20NAMA%20ANDA%3E%0AMau%20Order%20Website%20%0ATerima%20Kasih">
+        <Link
+          target="_blank"
+          href="https://api.whatsapp.com/send?phone=6285231796284&text=Halo%20Admin%20Qreative%20Tech%0ASaya%3A%20%3CISI%20NAMA%20ANDA%3E%0AMau%20Order%20Website%20%0ATerima%20Kasih"
+        >
           <Button
-            as="a"
             rounded="full"
             colorScheme="red"
             size={{ base: "md", md: "lg" }}
-            width={{ base: "full", md: "80%" }}
-            target="_blank"
+            width="full"
           >
             Pesan Sekarang
           </Button>
         </Link>
-        <Link href="https://api.whatsapp.com/send?phone=6285231796284&text=Halo%20Admin%20Qreative%20Tech%0ASaya%3A%20%3CISI%20NAMA%20ANDA%3E%0AMau%20konsultasi%20terkait%20website%20saya%0ATerima%20Kasih">
-          <Button
-            as="a"
-            size={{ base: "md", md: "lg" }}
-            rounded="full"
-            width={{ base: "full", md: "80%" }}
-            target="_blank"
-          >
+        <Link
+          target="_blank"
+          href="https://api.whatsapp.com/send?phone=6285231796284&text=Halo%20Admin%20Qreative%20Tech%0ASaya%3A%20%3CISI%20NAMA%20ANDA%3E%0AMau%20konsultasi%20terkait%20website%20saya%0ATerima%20Kasih"
+        >
+          <Button size={{ base: "md", md: "lg" }} rounded="full" width="full">
             Konsultasi Gratis
           </Button>
         </Link>

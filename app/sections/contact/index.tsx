@@ -1,4 +1,12 @@
-import { Flex, HStack, Heading, Stack, Text } from "@chakra-ui/react";
+"use client";
+import {
+  Flex,
+  HStack,
+  Heading,
+  Stack,
+  Text,
+  useBreakpointValue,
+} from "@chakra-ui/react";
 import React from "react";
 import { FiPhone } from "react-icons/fi";
 import { GoMail } from "react-icons/go";
@@ -8,17 +16,14 @@ import TitleImg from "@/assets/title.png";
 import Image from "next/image";
 
 const ContactSections = () => {
+  const isMobile = useBreakpointValue({ base: true, md: false }) ?? false;
   return (
     <Stack id="contact">
-      <Stack
-        position="absolute"
-        bottom={{ base: "10%", md: "3%" }}
-        left={{ base: undefined, md: 10 }}
-        right={{ base: 5, md: undefined }}
-        width={{ base: "40%", md: "auto" }}
-      >
-        <Image src={TitleImg} alt="title logo image" />
-      </Stack>
+      {!isMobile ? (
+        <Stack position="absolute" bottom={"3%"} left={10} width="auto">
+          <Image src={TitleImg} alt="title logo image" />
+        </Stack>
+      ) : null}
       <Flex
         direction={{ base: "column", md: "row" }}
         paddingY={{ base: 5, md: 10 }}

@@ -59,11 +59,12 @@ const HeroSections = () => {
               untuk mengoptimalkan potensi bisnis Anda.
             </Text>
           </Stack>
-          <Link href="https://api.whatsapp.com/send?phone=6285231796284&text=Halo%20Admin%20Qreative%20Tech%0ASaya%3A%20%3CISI%20NAMA%20ANDA%3E%0AMau%20Order%20Website%20%0ATerima%20Kasih">
+          <Link
+            target="_blank"
+            href="https://api.whatsapp.com/send?phone=6285231796284&text=Halo%20Admin%20Qreative%20Tech%0ASaya%3A%20%3CISI%20NAMA%20ANDA%3E%0AMau%20Order%20Website%20%0ATerima%20Kasih"
+          >
             <Button
               marginTop={3}
-              as="a"
-              target="_blank"
               rightIcon={<IoArrowForwardCircleOutline />}
               colorScheme="red"
               width="fit-content"

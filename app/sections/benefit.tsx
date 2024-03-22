@@ -8,6 +8,7 @@ import {
   SimpleGrid,
   Stack,
   Text,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import React from "react";
 import Image from "next/image";
@@ -21,17 +22,20 @@ import Trace from "@/assets/fit.png";
 import { benefits } from "./data";
 
 const BenefitSection = () => {
+  const isMobile = useBreakpointValue({ base: true, md: false }) ?? false;
   return (
     <Stack position="relative">
       {/* image */}
-      <Stack
-        position="absolute"
-        width="100px"
-        left={{ base: 5, md: "20%" }}
-        top={{ base: "17%", md: 8 }}
-      >
-        <Image src={Cat} alt="cat" />
-      </Stack>
+      {!isMobile ? (
+        <Stack
+          position="absolute"
+          width="100px"
+          left={{ base: 5, md: "20%" }}
+          top={{ base: "17%", md: 8 }}
+        >
+          <Image src={Cat} alt="cat" />
+        </Stack>
+      ) : null}
 
       <Stack position="absolute" width="100px" bottom={64} right={1}>
         <Image src={Trace} alt="cat's trace" />
