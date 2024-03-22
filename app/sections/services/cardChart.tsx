@@ -12,7 +12,7 @@ const CardChart = ({ paket, price, desc, items, isMain }: ChartProps) => {
       rounded="xl"
       marginTop={5}
       height="auto"
-      minWidth="323px"
+      minWidth="290px"
     >
       <Stack
         alignItems="center"

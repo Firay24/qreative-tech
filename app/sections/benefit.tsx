@@ -28,7 +28,7 @@ const BenefitSection = () => {
         position="absolute"
         width="100px"
         left={{ base: 5, md: "20%" }}
-        top={{ base: 0, md: 8 }}
+        top={{ base: "17%", md: 8 }}
       >
         <Image src={Cat} alt="cat" />
       </Stack>
@@ -39,7 +39,7 @@ const BenefitSection = () => {
 
       <Stack
         paddingY={{ base: 5, md: 10 }}
-        paddingX={{ base: 5, md: 12 }}
+        paddingX={{ base: 10, md: 12 }}
         color="primary.dark"
         textAlign="center"
         gap={{ base: 2, md: 5 }}

@@ -9,12 +9,12 @@ const CallActionSections = () => {
       bgColor="primary.yellow"
       marginTop={5}
       paddingY={{ base: 5, md: 10 }}
-      paddingX={{ base: 5, md: 12 }}
+      paddingX={{ base: 10, md: 12 }}
       width="full"
     >
       <Stack width={{ base: "full", md: "50%" }}>
         <Text
-          fontSize={{ base: "2xl", md: "4xl" }}
+          fontSize={{ base: "3xl", md: "4xl" }}
           fontWeight="bold"
           color="white"
           textAlign={{ base: "center", md: "start" }}

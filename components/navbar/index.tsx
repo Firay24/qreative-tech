@@ -4,13 +4,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import {
-  Accordion,
-  AccordionButton,
-  AccordionIcon,
-  AccordionItem,
-  AccordionPanel,
   Button,
-  Fade,
   HStack,
   IconButton,
   Stack,
@@ -51,10 +45,10 @@ const Navbar = () => {
         justifyContent="space-between"
         width="full"
         bgColor="primary.yellow"
-        paddingX={{ base: 4, md: 14 }}
+        paddingX={{ base: 10, md: 14 }}
         paddingY={{ base: 3, md: 6 }}
       >
-        <Stack width={{ base: "45%", md: "10%" }}>
+        <Stack width={{ base: "35%", md: "12%" }}>
           <Image
             src={LogoImg}
             alt="logo image"

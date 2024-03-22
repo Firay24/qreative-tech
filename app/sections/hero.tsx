@@ -13,11 +13,11 @@ const HeroSections = () => {
     <Stack position="relative" id="home">
       <Flex
         zIndex={50}
-        paddingX={{ base: 5, md: 14 }}
+        paddingX={{ base: 10, md: 14 }}
         gap={2}
         alignItems="center"
         justifyContent="center"
-        minHeight={{ base: "80vh", md: "100vh" }}
+        minHeight="100vh"
         direction={{ base: "column", md: "row" }}
       >
         <Stack

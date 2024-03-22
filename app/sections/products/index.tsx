@@ -44,7 +44,7 @@ const ProductSections = () => {
     <Stack marginBottom={50} overflow="hidden" marginY={8} id="product">
       <Stack padding={5}>
         {/* heading */}
-        <Stack textAlign="center">
+        <Stack textAlign="center" paddingX={5}>
           <Heading as="h2" size="xl" fontWeight="medium">
             Produk Kami
           </Heading>

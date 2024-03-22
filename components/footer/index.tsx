@@ -25,7 +25,7 @@ const Footer = () => {
         paddingY={5}
       >
         <Stack alignItems="center">
-          <Image src={LogoImg} alt="logo" />
+          <Image src={LogoImg} alt="logo" width={150} />
           {isMobile ? (
             <Text fontSize="14px">Copyright © 2024 Templates</Text>
           ) : null}

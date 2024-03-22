@@ -19,13 +19,13 @@ const AboutSections = () => {
       </Stack>
       <Flex
         paddingY={16}
-        paddingX={{ base: 5, md: 12 }}
+        paddingX={{ base: 10, md: 12 }}
         gap={{ base: 8, md: 14 }}
         direction={{ base: "column", md: "row" }}
         alignItems={"center"}
         width="full"
       >
-        <Stack width={{ base: "60%", md: "40%" }}>
+        <Stack width={{ base: "80%", md: "40%" }}>
           <Image src={AbaoutImg} alt="image about" width={2000} />
         </Stack>
         <Stack gap={{ base: 4, md: 8 }} width={{ base: "full", md: "60%" }}>

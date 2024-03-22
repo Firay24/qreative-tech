@@ -14,14 +14,15 @@ const ContactSections = () => {
         position="absolute"
         bottom={{ base: "10%", md: "3%" }}
         left={{ base: undefined, md: 10 }}
-        right={{ base: 10, md: undefined }}
+        right={{ base: 5, md: undefined }}
+        width={{ base: "40%", md: "auto" }}
       >
         <Image src={TitleImg} alt="title logo image" />
       </Stack>
       <Flex
         direction={{ base: "column", md: "row" }}
         paddingY={{ base: 5, md: 10 }}
-        paddingX={{ base: 5, md: 20 }}
+        paddingX={{ base: 10, md: 20 }}
         gap={3}
       >
         {/* text content */}

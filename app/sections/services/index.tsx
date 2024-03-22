@@ -21,7 +21,7 @@ const ServicesSection = () => {
       </Stack>
       <Stack
         paddingY={{ base: 5, md: 10 }}
-        paddingX={{ base: 5, md: 12 }}
+        paddingX={{ base: 10, md: 12 }}
         textAlign="center"
         gap={6}
       >
