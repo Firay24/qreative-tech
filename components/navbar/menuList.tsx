@@ -39,6 +39,7 @@ const MenuList = ({ isOpen }: { isOpen: boolean }) => {
                     color="primary.dark"
                     width="full"
                     textAlign="center"
+                    cursor="pointer"
                   >
                     {item.label}
                   </Text>
@@ -51,6 +52,7 @@ const MenuList = ({ isOpen }: { isOpen: boolean }) => {
                     color="primary.dark"
                     width="full"
                     textAlign="center"
+                    cursor="pointer"
                   >
                     {item.label}
                   </Text>
@@ -59,7 +61,7 @@ const MenuList = ({ isOpen }: { isOpen: boolean }) => {
             ) : (
               <Accordion allowToggle key={index}>
                 <AccordionItem border="none">
-                  <AccordionButton justifyContent="center" paddingY={0}>
+                  <AccordionButton justifyContent="center" paddingY={2}>
                     <Text fontWeight="medium" color="primary.dark">
                       {item.label}
                     </Text>
@@ -84,6 +86,7 @@ const MenuList = ({ isOpen }: { isOpen: boolean }) => {
                               color="primary.dark"
                               width="full"
                               textAlign="center"
+                              cursor="pointer"
                             >
                               {menu.label}
                             </Text>

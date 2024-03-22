@@ -7,13 +7,21 @@ import {
   Text,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React from "react";
 import bgImg from "@/assets/bg.png";
 import IdekeenImg from "@/assets/logo/idekeen.jpg";
 import { FaStar } from "react-icons/fa6";
 
-const HeroSections = ({ title, paket }: { title: string; paket: string }) => {
+const HeroSections = ({
+  title,
+  paket,
+  logo,
+}: {
+  title: string;
+  paket: string;
+  logo: StaticImageData;
+}) => {
   const isMobile = useBreakpointValue({ base: true, md: false }) ?? false;
   return (
     <Stack position="relative" id="home">
@@ -33,9 +41,9 @@ const HeroSections = ({ title, paket }: { title: string; paket: string }) => {
           gap={5}
           direction={{ base: "column", md: "row" }}
         >
-          <Stack width={{ base: "60%", md: "15%" }}>
+          <Stack width={{ base: "220px", md: "180px" }}>
             <Image
-              src={IdekeenImg}
+              src={logo}
               alt="logo image"
               style={{ borderRadius: "10%" }}
             />

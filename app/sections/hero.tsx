@@ -65,6 +65,12 @@ const HeroSections = () => {
             width="fit-content"
             size={{ base: "md", md: "lg" }}
             rounded="full"
+            onClick={() => {
+              window.open(
+                "https://api.whatsapp.com/send?phone=6285231796284&text=Halo%20Admin%20Qreative%20Tech%0ASaya%3A%20%3CISI%20NAMA%20ANDA%3E%0AMau%20Order%20Website%20%0ATerima%20Kasih",
+                "_blank"
+              );
+            }}
           >
             Pesan Sekarang
           </Button>

@@ -5,13 +5,25 @@ import PortoImg4 from "@/assets/porto4.png";
 import Image, { StaticImageData } from "next/image";
 import Marquee from "react-fast-marquee";
 
-const GaleryPortofolio = () => {
-  const imagesList = [PortoImg1, PortoImg2, PortoImg3, PortoImg4];
+const GaleryPortofolio = ({
+  imagesList,
+}: {
+  imagesList: StaticImageData[];
+}) => {
+  // const imagesList = [PortoImg1, PortoImg2, PortoImg3, PortoImg4];
   return (
-    <Marquee>
-      {imagesList.map((image: StaticImageData, index: number) => (
-        <Image key={index} src={image} alt="image portofolio" />
-      ))}
+    <Marquee className="marquee">
+      {imagesList &&
+        imagesList.map((image: StaticImageData, index: number) => (
+          <div key={index} className="imageContainer">
+            <Image
+              src={image}
+              alt="image portofolio"
+              objectFit="contain"
+              style={{ height: "100%", width: "100%" }}
+            />
+          </div>
+        ))}
     </Marquee>
   );
 };

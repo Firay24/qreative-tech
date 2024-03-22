@@ -47,3 +47,9 @@
 ::-webkit-scrollbar-thumb {
   background: #ffcb6a;
 }
+
+.imageContainer {
+  display: inline-block;
+  margin-right: 20px;
+  height: 300px;
+}

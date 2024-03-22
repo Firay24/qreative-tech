@@ -61,6 +61,18 @@ const CardChart = ({ paket, price, desc, items, isMain }: ChartProps) => {
             }}
             rounded="full"
             color={isMain ? "primary.dark" : "white"}
+            onClick={() => {
+              window.open(
+                `https://api.whatsapp.com/send?phone=6285231796284&text=Halo%20Admin%20Qreative%20Tech%0ASaya%3A%20%3CISI%20NAMA%20ANDA%3E%0AMau%20Order%20Website%20Paket%20${
+                  paket === "Premium Middle"
+                    ? "Premium"
+                    : paket === "Basic Web"
+                    ? "Basic"
+                    : "Platinum"
+                }%0ATerima%20Kasih`,
+                "_blank"
+              );
+            }}
           >
             Get Started
           </Button>

@@ -12,19 +12,32 @@ import {
   TabPanels,
   Tabs,
   Text,
-  useBreakpointValue,
 } from "@chakra-ui/react";
 import React from "react";
 import { BsCheckCircleFill } from "react-icons/bs";
 import GaleryPortofolio from "./GaleryPortofolio";
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
+import Image, { StaticImageData } from "next/image";
 
-const TabsSections = () => {
-  const isMobile = useBreakpointValue({ base: true, md: false }) ?? false;
+const TabsSections = ({
+  details,
+  features,
+  demoImg,
+  techImg,
+  demoLink,
+  title,
+}: {
+  details: string[];
+  features: string[];
+  demoImg: StaticImageData[];
+  techImg: StaticImageData[];
+  demoLink: string;
+  title: string;
+}) => {
   return (
     <Stack minHeight="80vh" overflow="hidden" marginTop={{ base: 0, md: 24 }}>
       <Tabs paddingTop={10}>
-        <TabList border="none" paddingX={{ base: 5, md: 14 }}>
+        <TabList border="none" paddingX={{ base: 10, md: 14 }}>
           <Tab
             _selected={{ borderColor: "primary.dark", fontWeight: "semibold" }}
           >
@@ -50,39 +63,40 @@ const TabsSections = () => {
                 width={{ base: "full", md: "70%" }}
                 gap={3}
               >
-                <Text>
-                  Selain layanan web builder, layanan lain yaitu jasa design
-                  flyer, logo, id card dan lain-lain yang berkaitan dengan
-                  digital promote atau branding. Jadi, Qreative Tech berfokus
-                  pada layanan digital kreatif dan tech service.
-                </Text>
-                <Text>
-                  Qreative Tech dimulai pada tahun 2024, walaupun terbilang
-                  masih dini, kami akan memberikan pelayanan semaksimal mungkin
-                  dengan evaluasi berkala agar kami tetap terus berkembang.
-                </Text>
+                <Text>{details && details[0]}</Text>
+                <Text>{details && details[1]}</Text>
               </Stack>
               <Stack
                 marginTop={{ base: 4, md: 0 }}
                 fontSize={{ base: "16px", md: "18px" }}
               >
                 <Text fontWeight={"semibold"}>Berikut fitur pada sistem:</Text>
-                <HStack>
-                  <BsCheckCircleFill color="gray" />
-                  <Text>Design template basic</Text>
-                </HStack>
-                <HStack>
-                  <BsCheckCircleFill color="gray" />
-                  <Text>Design template basic</Text>
-                </HStack>
-                <HStack>
-                  <BsCheckCircleFill color="gray" />
-                  <Text>Design template basic</Text>
-                </HStack>
+                {features &&
+                  features.map((item: string, index: number) => (
+                    <HStack key={index}>
+                      <BsCheckCircleFill color="gray" />
+                      <Text>{item}</Text>
+                    </HStack>
+                  ))}
               </Stack>
             </Flex>
             <Stack marginX={-5}>
-              <GaleryPortofolio />
+              <GaleryPortofolio imagesList={demoImg && demoImg} />
+            </Stack>
+            <Stack marginTop={5}>
+              <Flex width="full" gap={6} justifyContent="center" wrap="wrap">
+                {techImg &&
+                  techImg.map((item: StaticImageData, index: number) => (
+                    <Stack
+                      key={index}
+                      width={200}
+                      alignItems="center"
+                      justifyContent="center"
+                    >
+                      <Image src={item} alt="tech logo" />
+                    </Stack>
+                  ))}
+              </Flex>
             </Stack>
           </TabPanel>
           <TabPanel>
@@ -94,9 +108,10 @@ const TabsSections = () => {
               <Stack width={{ base: "full", md: "70%" }}>
                 <AspectRatio ratio={16 / 9}>
                   <iframe
-                    src="https://www.youtube.com/embed/eKdkigGYFpE?si=IpFbhhQRIlPI0ah8"
+                    src={demoLink}
                     title="YouTube video player"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    style={{ borderRadius: "10px" }}
                   />
                 </AspectRatio>
                 <Stack
@@ -113,10 +128,31 @@ const TabsSections = () => {
                       colorScheme="red"
                       rightIcon={<IoArrowForwardCircleOutline />}
                       size={{ base: "md", md: "lg" }}
+                      onClick={() => {
+                        window.open(
+                          `https://api.whatsapp.com/send?phone=6285231796284&text=Halo%20Admin%20Qreative%20Tech%0ASaya%3A%20%3CISI%20NAMA%20ANDA%3E%0AMau%20Order%20Website%20Paket%20${
+                            title === "Premium Middle"
+                              ? "Premium"
+                              : title === "Basic Web"
+                              ? "Basic"
+                              : "Platinum"
+                          }%0ATerima%20Kasih`,
+                          "_blank"
+                        );
+                      }}
                     >
                       Pesan Sekarang
                     </Button>
-                    <Button rounded="full" size={{ base: "md", md: "lg" }}>
+                    <Button
+                      rounded="full"
+                      size={{ base: "md", md: "lg" }}
+                      onClick={() => {
+                        window.open(
+                          "https://api.whatsapp.com/send?phone=6285231796284&text=Halo%20Admin%20Qreative%20Tech%0ASaya%3A%20%3CISI%20NAMA%20ANDA%3E%0AMau%20konsultasi%20terkait%20website%20saya%0ATerima%20Kasih",
+                          "_blank"
+                        );
+                      }}
+                    >
                       Konsultasi Dulu
                     </Button>
                   </Flex>

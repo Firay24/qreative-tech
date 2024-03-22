@@ -32,16 +32,26 @@ const CallActionSections = () => {
         <Button
           rounded="full"
           colorScheme="red"
-          onClick={() => console.log("tes1")}
           size={{ base: "md", md: "lg" }}
           width={{ base: "full", md: "80%" }}
+          onClick={() => {
+            window.open(
+              "https://api.whatsapp.com/send?phone=6285231796284&text=Halo%20Admin%20Qreative%20Tech%0ASaya%3A%20%3CISI%20NAMA%20ANDA%3E%0AMau%20Order%20Website%20%0ATerima%20Kasih",
+              "_blank"
+            );
+          }}
         >
           Pesan Sekarang
         </Button>
         <Button
           size={{ base: "md", md: "lg" }}
           rounded="full"
-          onClick={() => console.log("tes2")}
+          onClick={() => {
+            window.open(
+              "https://api.whatsapp.com/send?phone=6285231796284&text=Halo%20Admin%20Qreative%20Tech%0ASaya%3A%20%3CISI%20NAMA%20ANDA%3E%0AMau%20konsultasi%20terkait%20website%20saya%0ATerima%20Kasih",
+              "_blank"
+            );
+          }}
           width={{ base: "full", md: "80%" }}
         >
           Konsultasi Gratis

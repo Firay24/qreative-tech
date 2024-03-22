@@ -27,7 +27,7 @@ const Footer = () => {
         <Stack alignItems="center">
           <Image src={LogoImg} alt="logo" width={150} />
           {isMobile ? (
-            <Text fontSize="14px">Copyright © 2024 Templates</Text>
+            <Text fontSize="14px">Copyright © 2024 Qreative Tech</Text>
           ) : null}
         </Stack>
         <Stack textAlign="center">
@@ -47,7 +47,7 @@ const Footer = () => {
           </HStack>
         </Stack>
         {!isMobile ? (
-          <Text fontSize="14px">Copyright © 2024 Templates</Text>
+          <Text fontSize="14px">Copyright © 2024 Qreative Tech</Text>
         ) : null}
       </Flex>
     </Stack>

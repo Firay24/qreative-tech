@@ -21,8 +21,8 @@ const DetailPortofolioPage = () => {
   }, [location]);
   return (
     <Stack>
-      <HeroSections {...data[0]} />
-      <TabsSections />
+      <HeroSections {...(data && data[0])} />
+      <TabsSections {...(data && data[0])} />
     </Stack>
   );
 };
