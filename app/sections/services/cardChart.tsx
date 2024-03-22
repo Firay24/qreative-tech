@@ -1,5 +1,6 @@
 import ChartProps from "@/types/chart";
 import { Button, HStack, Spacer, Stack, Text } from "@chakra-ui/react";
+import Link from "next/link";
 import React from "react";
 import { FaCircleCheck } from "react-icons/fa6";
 
@@ -54,28 +55,28 @@ const CardChart = ({ paket, price, desc, items, isMain }: ChartProps) => {
         </Stack>
         <Spacer />
         <Stack paddingX={3} marginBottom={8}>
-          <Button
-            bgColor={isMain ? "primary.yellow" : "primary.grayDark"}
-            _hover={{
-              backgroundColor: isMain ? "yellow.500" : "gray.700",
-            }}
-            rounded="full"
-            color={isMain ? "primary.dark" : "white"}
-            onClick={() => {
-              window.open(
-                `https://api.whatsapp.com/send?phone=6285231796284&text=Halo%20Admin%20Qreative%20Tech%0ASaya%3A%20%3CISI%20NAMA%20ANDA%3E%0AMau%20Order%20Website%20Paket%20${
-                  paket === "Premium Middle"
-                    ? "Premium"
-                    : paket === "Basic Web"
-                    ? "Basic"
-                    : "Platinum"
-                }%0ATerima%20Kasih`,
-                "_blank"
-              );
-            }}
+          <Link
+            href={`https://api.whatsapp.com/send?phone=6285231796284&text=Halo%20Admin%20Qreative%20Tech%0ASaya%3A%20%3CISI%20NAMA%20ANDA%3E%0AMau%20Order%20Website%20Paket%20${
+              paket === "Premium Middle"
+                ? "Premium"
+                : paket === "Basic Web"
+                ? "Basic"
+                : "Platinum"
+            }%0ATerima%20Kasih`}
           >
-            Get Started
-          </Button>
+            <Button
+              bgColor={isMain ? "primary.yellow" : "primary.grayDark"}
+              _hover={{
+                backgroundColor: isMain ? "yellow.500" : "gray.700",
+              }}
+              rounded="full"
+              color={isMain ? "primary.dark" : "white"}
+              as="a"
+              target="_blank"
+            >
+              Get Started
+            </Button>
+          </Link>
         </Stack>
       </Stack>
     </Stack>

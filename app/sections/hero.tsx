@@ -7,6 +7,7 @@ import bgImg from "../../assets/bg.png";
 import heroImg from "@/assets/hero.png";
 import { Button, Flex, Heading, Stack, Text } from "@chakra-ui/react";
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
+import Link from "next/link";
 
 const HeroSections = () => {
   return (
@@ -58,22 +59,20 @@ const HeroSections = () => {
               untuk mengoptimalkan potensi bisnis Anda.
             </Text>
           </Stack>
-          <Button
-            marginTop={3}
-            rightIcon={<IoArrowForwardCircleOutline />}
-            colorScheme="red"
-            width="fit-content"
-            size={{ base: "md", md: "lg" }}
-            rounded="full"
-            onClick={() => {
-              window.open(
-                "https://api.whatsapp.com/send?phone=6285231796284&text=Halo%20Admin%20Qreative%20Tech%0ASaya%3A%20%3CISI%20NAMA%20ANDA%3E%0AMau%20Order%20Website%20%0ATerima%20Kasih",
-                "_blank"
-              );
-            }}
-          >
-            Pesan Sekarang
-          </Button>
+          <Link href="https://api.whatsapp.com/send?phone=6285231796284&text=Halo%20Admin%20Qreative%20Tech%0ASaya%3A%20%3CISI%20NAMA%20ANDA%3E%0AMau%20Order%20Website%20%0ATerima%20Kasih">
+            <Button
+              marginTop={3}
+              as="a"
+              target="_blank"
+              rightIcon={<IoArrowForwardCircleOutline />}
+              colorScheme="red"
+              width="fit-content"
+              size={{ base: "md", md: "lg" }}
+              rounded="full"
+            >
+              Pesan Sekarang
+            </Button>
+          </Link>
         </Stack>
         <Stack width={{ base: "80%", md: "60%" }}>
           <Image

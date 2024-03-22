@@ -18,6 +18,7 @@ import { BsCheckCircleFill } from "react-icons/bs";
 import GaleryPortofolio from "./GaleryPortofolio";
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
 import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 
 const TabsSections = ({
   details,
@@ -123,38 +124,36 @@ const TabsSections = ({
                     Pesan Website seperti ini sekarang
                   </Heading>
                   <Flex gap={4} direction={{ base: "column", md: "row" }}>
-                    <Button
-                      rounded="full"
-                      colorScheme="red"
-                      rightIcon={<IoArrowForwardCircleOutline />}
-                      size={{ base: "md", md: "lg" }}
-                      onClick={() => {
-                        window.open(
-                          `https://api.whatsapp.com/send?phone=6285231796284&text=Halo%20Admin%20Qreative%20Tech%0ASaya%3A%20%3CISI%20NAMA%20ANDA%3E%0AMau%20Order%20Website%20Paket%20${
-                            title === "Premium Middle"
-                              ? "Premium"
-                              : title === "Basic Web"
-                              ? "Basic"
-                              : "Platinum"
-                          }%0ATerima%20Kasih`,
-                          "_blank"
-                        );
-                      }}
+                    <Link
+                      href={`https://api.whatsapp.com/send?phone=6285231796284&text=Halo%20Admin%20Qreative%20Tech%0ASaya%3A%20%3CISI%20NAMA%20ANDA%3E%0AMau%20Order%20Website%20Paket%20${
+                        title === "Premium Middle"
+                          ? "Premium"
+                          : title === "Basic Web"
+                          ? "Basic"
+                          : "Platinum"
+                      }%0ATerima%20Kasih`}
                     >
-                      Pesan Sekarang
-                    </Button>
-                    <Button
-                      rounded="full"
-                      size={{ base: "md", md: "lg" }}
-                      onClick={() => {
-                        window.open(
-                          "https://api.whatsapp.com/send?phone=6285231796284&text=Halo%20Admin%20Qreative%20Tech%0ASaya%3A%20%3CISI%20NAMA%20ANDA%3E%0AMau%20konsultasi%20terkait%20website%20saya%0ATerima%20Kasih",
-                          "_blank"
-                        );
-                      }}
-                    >
-                      Konsultasi Dulu
-                    </Button>
+                      <Button
+                        as="a"
+                        rounded="full"
+                        colorScheme="red"
+                        rightIcon={<IoArrowForwardCircleOutline />}
+                        size={{ base: "md", md: "lg" }}
+                        target="_blank"
+                      >
+                        Pesan Sekarang
+                      </Button>
+                    </Link>
+                    <Link href="https://api.whatsapp.com/send?phone=6285231796284&text=Halo%20Admin%20Qreative%20Tech%0ASaya%3A%20%3CISI%20NAMA%20ANDA%3E%0AMau%20konsultasi%20terkait%20website%20saya%0ATerima%20Kasih">
+                      <Button
+                        as="a"
+                        rounded="full"
+                        size={{ base: "md", md: "lg" }}
+                        target="_blank"
+                      >
+                        Konsultasi Dulu
+                      </Button>
+                    </Link>
                   </Flex>
                 </Stack>
               </Stack>

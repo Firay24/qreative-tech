@@ -1,5 +1,6 @@
 "use client";
 import { Button, Flex, HStack, Stack, Text } from "@chakra-ui/react";
+import Link from "next/link";
 import React from "react";
 
 const CallActionSections = () => {
@@ -29,33 +30,29 @@ const CallActionSections = () => {
         direction={{ base: "column", md: "row" }}
         alignItems="center"
       >
-        <Button
-          rounded="full"
-          colorScheme="red"
-          size={{ base: "md", md: "lg" }}
-          width={{ base: "full", md: "80%" }}
-          onClick={() => {
-            window.open(
-              "https://api.whatsapp.com/send?phone=6285231796284&text=Halo%20Admin%20Qreative%20Tech%0ASaya%3A%20%3CISI%20NAMA%20ANDA%3E%0AMau%20Order%20Website%20%0ATerima%20Kasih",
-              "_blank"
-            );
-          }}
-        >
-          Pesan Sekarang
-        </Button>
-        <Button
-          size={{ base: "md", md: "lg" }}
-          rounded="full"
-          onClick={() => {
-            window.open(
-              "https://api.whatsapp.com/send?phone=6285231796284&text=Halo%20Admin%20Qreative%20Tech%0ASaya%3A%20%3CISI%20NAMA%20ANDA%3E%0AMau%20konsultasi%20terkait%20website%20saya%0ATerima%20Kasih",
-              "_blank"
-            );
-          }}
-          width={{ base: "full", md: "80%" }}
-        >
-          Konsultasi Gratis
-        </Button>
+        <Link href="https://api.whatsapp.com/send?phone=6285231796284&text=Halo%20Admin%20Qreative%20Tech%0ASaya%3A%20%3CISI%20NAMA%20ANDA%3E%0AMau%20Order%20Website%20%0ATerima%20Kasih">
+          <Button
+            as="a"
+            rounded="full"
+            colorScheme="red"
+            size={{ base: "md", md: "lg" }}
+            width={{ base: "full", md: "80%" }}
+            target="_blank"
+          >
+            Pesan Sekarang
+          </Button>
+        </Link>
+        <Link href="https://api.whatsapp.com/send?phone=6285231796284&text=Halo%20Admin%20Qreative%20Tech%0ASaya%3A%20%3CISI%20NAMA%20ANDA%3E%0AMau%20konsultasi%20terkait%20website%20saya%0ATerima%20Kasih">
+          <Button
+            as="a"
+            size={{ base: "md", md: "lg" }}
+            rounded="full"
+            width={{ base: "full", md: "80%" }}
+            target="_blank"
+          >
+            Konsultasi Gratis
+          </Button>
+        </Link>
       </Flex>
     </Flex>
   );
