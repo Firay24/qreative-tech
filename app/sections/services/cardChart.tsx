@@ -14,6 +14,7 @@ const CardChart = ({ paket, price, desc, items, isMain }: ChartProps) => {
       marginTop={5}
       height="auto"
       minWidth="290px"
+      width="28%"
     >
       <Stack
         alignItems="center"
