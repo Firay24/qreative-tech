@@ -140,6 +140,7 @@ const TabsSections = ({
                         rightIcon={<IoArrowForwardCircleOutline />}
                         size={{ base: "md", md: "lg" }}
                         target="_blank"
+                        width={"full"}
                       >
                         Pesan Sekarang
                       </Button>
@@ -150,6 +151,7 @@ const TabsSections = ({
                         rounded="full"
                         size={{ base: "md", md: "lg" }}
                         target="_blank"
+                        width="full"
                       >
                         Konsultasi Dulu
                       </Button>
