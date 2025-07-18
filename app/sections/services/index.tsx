@@ -43,7 +43,7 @@ const ServicesSection = () => {
         <Flex
           gap={4}
           direction={{ base: "column", md: "row" }}
-          alignItems="stretch"
+          alignItems="flex-start"
           wrap="wrap"
           width="full"
           justifyContent="center"

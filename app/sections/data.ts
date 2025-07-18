@@ -85,42 +85,115 @@ export const benefits = [
 
 export const services = [
   {
-    paket: "Premium Middle",
-    price: "2.500.000",
+    paket: "Paket Wesite E-Commerce",
+    price: "3.000.000",
     desc: "Praktis dan ekonomis untuk merintis bisnis",
     isMain: false,
     items: [
-      "Custome design",
-      "3x revisi gratis",
-      "3x update konten gratis",
-      "Garansi 1 tahun",
-      "Fitur menyesuaikan kebutuhan",
+      {
+        paket: "Starter",
+        price: "3.000.000",
+        service: [
+          "10 - 40 Produk",
+          "E-commerce fitur",
+          "Tampilan mobile friendly",
+          "Free domain & hosting aktif 1 tahun",
+          "Pembayaran bank/paypal",
+        ],
+      },
+      {
+        paket: "Growth",
+        price: "5.000.000",
+        service: [
+          "50 - 100 Produk",
+          "Dashboard admin",
+          "Free domain & hosting aktif 1 tahun",
+          "Pembayaran bank/paypal",
+        ],
+      },
+      {
+        paket: "Pro",
+        price: "10.000.000",
+        service: [
+          "Custom design",
+          "Bebas request fitur layanan",
+          "Konsultasi kebutuhan dan riset",
+          "Dashboard admin",
+          "Gratis maintenance 6 bulan",
+        ],
+      },
     ],
   },
   {
-    paket: "Basic Web",
-    price: "700.000",
+    paket: "Paket Website Company Profile",
+    price: "1.500.000",
     desc: "Praktis dan ekonomis untuk merintis bisnis",
     isMain: true,
     items: [
-      "Custome design",
-      "2x revisi gratis",
-      "2x update konten gratis",
-      "Garansi 1 tahun",
+      {
+        paket: "Basic",
+        price: "1.500.000",
+        service: [
+          "1 halaman (landing page menarik)",
+          "Tampian rapi di HP maupun laptop",
+          "Form kontak",
+          "Free domain & hosting aktif 1 tahun",
+        ],
+      },
+      {
+        paket: "Standar",
+        price: "2.500.000",
+        service: [
+          "3-5 halaman (home, about, services, contact)",
+          "Akses untuk update website sendiri",
+          "Konten tulisan menarik dan mudah ditemukan search engine google",
+          "Free domain & hosting aktif 1 tahun",
+        ],
+      },
+      {
+        paket: "Premium",
+        price: "3.500.000",
+        service: [
+          "Desain sesuai kebutuhan dan brand",
+          "Konsultasi konsep dan strategi website",
+          "Website mudah ditemukan di google",
+          "Bebas biaya perawatan selama 1 tahun",
+          "Free domain & hosting aktif 1 tahun",
+        ],
+      },
     ],
   },
   {
-    paket: "Platinum Advance",
-    price: "6.000.000",
-    desc: "Praktis dan ekonomis untuk merintis bisnis",
+    paket: "Paket Website Custom App",
+    price: "7.000.000",
+    desc: "Custom dengan teknologi advance dan scalable",
     isMain: false,
     items: [
-      "Custome design",
-      "3x revisi gratis",
-      "3x update konten gratis",
-      "Garansi 1 tahun",
-      "Fitur menyesuaikan kebutuhan",
-      "Dokumentasi alur sistem",
+      {
+        paket: "Dashboard admin",
+        price: "7.000.000",
+        service: [],
+      },
+      {
+        paket: "Sistem manajemen data",
+        price: "10.000.000",
+        service: [],
+      },
+      {
+        paket: "Sistem penjadwalan",
+        price: "14.000.000",
+        service: [],
+      },
+      {
+        paket: "Sistem konsultasi (chat realtime)",
+        price: "17.000.000",
+        service: [],
+      },
+      {
+        paket: "Mullti user (lebih dari 2 role)",
+        price: "20.000.000",
+        service: [],
+      },
     ],
   },
 ];

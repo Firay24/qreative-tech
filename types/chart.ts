@@ -3,7 +3,13 @@ interface ChartProps {
   desc: string;
   price: string;
   isMain: boolean;
-  items: string[];
+  items: ItemsProps[];
+}
+
+export interface ItemsProps {
+  paket: string;
+  price: string;
+  service: string[];
 }
 
 export default ChartProps;
