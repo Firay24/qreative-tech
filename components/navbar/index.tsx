@@ -44,7 +44,7 @@ const Navbar = () => {
       <HStack
         justifyContent="space-between"
         width="full"
-        bgColor="primary.yellow"
+        bgColor="primary.dark"
         paddingX={{ base: 10, md: 14 }}
         paddingY={{ base: 3, md: 6 }}
       >

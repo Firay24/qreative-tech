@@ -345,3 +345,9 @@ export const testimonies = [
     img: AvatarImg,
   },
 ];
+
+export const teknis = [
+  {
+    package: "Basic Web",
+  },
+];

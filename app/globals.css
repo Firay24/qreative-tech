@@ -4,6 +4,11 @@
   margin: 0;
 }
 
+html,
+body {
+  background-color: #333333;
+}
+
 .slick-arrow.slick-next,
 .slick-arrow.slick-prev {
   background-color: #ffb733;

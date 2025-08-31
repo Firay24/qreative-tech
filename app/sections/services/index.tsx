@@ -4,6 +4,11 @@ import {
   Heading,
   SimpleGrid,
   Stack,
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tabs,
   Text,
 } from "@chakra-ui/react";
 import React from "react";
@@ -52,6 +57,33 @@ const ServicesSection = () => {
             <CardChart key={index} {...item} />
           ))}
         </Flex>
+
+        {/* adds on */}
+        <Stack alignItems={"center"}>
+          <Stack>
+            <Heading as="h2" size="xl" fontWeight="medium">
+              Optional Add-ons
+            </Heading>
+            <Text>
+              <span style={{ fontWeight: "bold" }}>Layanan tambahan</span> yang
+              mungkin Anda butuhkan
+            </Text>
+          </Stack>
+          <Tabs variant="soft-rounded" colorScheme="yellow" marginTop={4}>
+            <TabList>
+              <Tab>Layanan Teknis</Tab>
+              <Tab>Layanan non-Teknis</Tab>
+            </TabList>
+            <TabPanels>
+              <TabPanel>
+                <p>one!</p>
+              </TabPanel>
+              <TabPanel>
+                <p>two!</p>
+              </TabPanel>
+            </TabPanels>
+          </Tabs>
+        </Stack>
       </Stack>
     </Stack>
   );
